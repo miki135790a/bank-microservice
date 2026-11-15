@@ -232,29 +232,5 @@ docker exec -it bank-postgres psql -U your_username -d bank \
 # Ожидаемо: id=1 → 700.00, id=2 → 300.00
 ```
 
----
-
-## 📂 Структура проекта
-
-```
-src/main/java/com/example/bank/
-├── config/               # KafkaConfig, JpaAuditingConfig, JacksonConfig
-├── domain/
-│   ├── client/           # Client entity
-│   ├── account/          # Account entity, Currency, AccountStatus
-│   ├── operation/        # Operation entity, OperationType, OperationStatus
-│   └── outbox/           # OutboxEvent entity
-├── event/                # Kafka events (TransferInitiatedEvent, ...)
-├── kafka/                # OutboxPublisher, TransferConsumer
-├── repository/           # JPA repositories
-├── service/              # Бизнес-логика
-├── validation/           # Кастомные аннотации (@ValidCurrency)
-└── web/
-    ├── controller/       # REST controllers
-    ├── dto/              # Request/Response DTOs
-    ├── exception/        # GlobalExceptionHandler, ErrorResponse
-    └── mapper/           # Entity ↔ DTO mappers
-```
-
 
 
