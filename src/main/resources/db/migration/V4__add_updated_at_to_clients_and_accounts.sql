@@ -1,0 +1,2 @@
+ALTER TABLE clients ADD COLUMN updated_at TIMESTAMP;
+ALTER TABLE accounts ADD COLUMN updated_at TIMESTAMP;
